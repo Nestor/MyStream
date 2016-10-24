@@ -14,12 +14,12 @@ credit, as it'd break my heart if you didn't!
 Also if you need any help, just ask me!
 
 # <h2>Installation Instructions</h2>
- 1) Create a database and a user account to go with it, or you could use a master account.
- 2) Edit the MySQL information in the config/configuration.php file to match.
- 	-> $serverip = "localhost";
-	   $username = "root";
-	   $password = "root";
-	   $dbname = "mystream";
+ 1) Create a database and a user account to go with it, or you could use a master account.<br><br>
+ 2) Edit the MySQL information in the config/configuration.php file to match.<br>
+ 	-> $serverip = "localhost";<br>
+	   $username = "root";<br>
+	   $password = "root";<br>
+	   $dbname = "mystream";<br><br>
  3) Edit the configuration file and put in the rest of the required values.
  
  <h4><i>Version 2.2b</i></h4>
