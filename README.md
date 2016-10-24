@@ -21,5 +21,8 @@ Also if you need any help, just ask me!
 	   $password = "root";<br>
 	   $dbname = "mystream";<br><br>
  3) Edit the configuration file and put in the rest of the required values.
+ 4) Edit core/init.php AND ONLY CHANGE THE LINE:
+    -> define(ROOT, $_SERVER["DOCUMENT_ROOT"] . "/Stream"); // Edit the /stream part, if you place the file in no folder, then get rid of /stream, if you placed it in a folder then do /foldername DO NOT LEAVE A / AT THE END!
+    -> Only edit the part /Stream !!!!
  
-# <h5><i>Made with <3 by Exus | Version 2.2b</i></h5>
+# <h5><i>Made with <3 by Exus | Version 2.3</i></h5>
