@@ -186,6 +186,9 @@ if ($upload_check == 0) {
 if ($upload_check == 1) {
     $file_name = IMAGE_DIR . "/" . basename( $_FILES["img"]["name"]);
     $name =  $_POST['name'];
+    $desc = $_POST['desc'];
+    $series = $_POST['series'];
+    $link = $_POST['link']
 
     $insert_values = $conn->prepare("INSERT INTO `show` (title, description, series, thumb_url, file_link) VALUES (:name, :description, :series, :thumb, :link)");
     $insert_values->bindParam(":name", $name);
