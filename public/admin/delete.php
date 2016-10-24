@@ -14,9 +14,9 @@
 <body>
 
 <div class="header">
-	<div class="inner-header">
-		<h1><?php echo WEBSITE_NAME; if (DISPpage == 1) { echo " | Delete"; } ?></h1>
-	</div>
+  <div class="inner-header">
+    <h1><?php echo WEBSITE_NAME; if (DISPpage == 1) { echo " | Delete"; } ?></h1>
+  </div>
 </div>
 <div class="menu">
 <a href="../index.php">Home</a>
@@ -100,7 +100,7 @@
   <select name="name">
 
   <?php
-  $list_user = $conn->prepare("SELECT * FROM `show`");
+  $list_user = $conn->prepare("SELECT * FROM `user`");
   $list_user->execute();
   while ($lu = $list_user->fetch(PDO::FETCH_ASSOC)) {
   ?>
