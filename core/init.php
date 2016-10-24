@@ -5,14 +5,7 @@
 * You HAVE been warned!
 */
 
-/* Document Root for ALL files */
-/*
-define(ROOT, $_SERVER['DOCUMENT_ROOT'] . "/Stream");
-*/
-
-// This is for the **DEVELOPER COPY ONLY** //
-
-define(ROOT, $_SERVER["DOCUMENT_ROOT"] . "/Stream");
+define(ROOT, $_SERVER["DOCUMENT_ROOT"] . "/Stream"); // Edit the /stream part, if you place the file in no folder, then get rid of /stream, if you placed it in a folder then do /foldername DO NOT LEAVE A / AT THE END!
 
 ////////////////////////////////////////////
 

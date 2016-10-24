@@ -1,12 +1,10 @@
 <?php session_start(); require("../../core/init.php");
-	if (isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1) {
-		$fetchRank = $conn->prepare("SELECT * FROM `user` WHERE `email`=:email");
-		$fetchRank->bindParam(":email", $_COOKIE['username']); // Yes that cookie ['username'] does contain the email
-		$fetchRank->execute();
-		while ($fr = $fetchRank->fetch(PDO::FETCH_ASSOC)) {
-			if (password_verify($_COOKIE['password'], $fr['password'])) {
-				echo "SUCCESS!";
-			}
+  if (isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1) {
+    $fetchRank = $conn->prepare("SELECT * FROM `user` WHERE `email`=:email");
+    $fetchRank->bindParam(":email", $_COOKIE['username']); // Yes that cookie ['username'] does contain the email
+    $fetchRank->execute();
+    while ($fr = $fetchRank->fetch(PDO::FETCH_ASSOC)) {
+      if (password_verify($_SESSION['password'], $fr['password'])) {
 
  ?>
 <html>
@@ -46,4 +44,4 @@
 
 </body>
 </html>
-<?php } } ?>
+<?php } } } ?>

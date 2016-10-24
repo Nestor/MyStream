@@ -32,9 +32,9 @@ CREATE TABLE `show` (
 
 CREATE TABLE `user` (
   `id` int(11) UNSIGNED NOT NULL,
-  `username` longtext,
+  `username` varchar(100) DEFAULT "",
   `password` longtext,
-  `email` longtext,
+  `email` varchar(100) DEFAULT "",
   `rank` int(11) DEFAULT NULL,
   `verified` int(11) DEFAULT NULL,
   `emailauthverify` longtext
@@ -51,7 +51,8 @@ ALTER TABLE `show`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`,`email`);
 
 
 ALTER TABLE `category`

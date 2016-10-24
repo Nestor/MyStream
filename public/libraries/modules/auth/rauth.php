@@ -81,17 +81,17 @@ mail($email, "Account verification", $message);
 
 
 /* SuccessMsg */
-echo "Successfully registered, redirecting...";
+echo "Successfully registered<br>";
 
 
 /* Redirect */
 
-$redirect = WEBSITE_DOMAIN . "/index.php";
-?>
-	
-    <meta http-equiv="refresh" content="0;URL='<?php echo $redirect; ?>'" />    
+$redirect = WEBSITE_DOMAIN . "/admin/";
+echo "Loading...";
 
-<?php
+	
+ echo '<script>window.location.href = "' . $redirect . '";</script>';   
+
 
 } else {
 	/* FailMsg - Blank Field */

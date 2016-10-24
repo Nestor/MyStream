@@ -1,12 +1,10 @@
 <?php session_start(); require("../../core/init.php");
-    if (isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1) {
-        $fetchRank = $conn->prepare("SELECT * FROM `user` WHERE `email`=:email");
-        $fetchRank->bindParam(":email", $_COOKIE['username']); // Yes that cookie ['username'] does contain the email
-        $fetchRank->execute();
-        while ($fr = $fetchRank->fetch(PDO::FETCH_ASSOC)) {
-            if (password_verify($_COOKIE['password'], $fr['password'])) {
-                echo "SUCCESS!";
-            }
+  if (isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1) {
+    $fetchRank = $conn->prepare("SELECT * FROM `user` WHERE `email`=:email");
+    $fetchRank->bindParam(":email", $_COOKIE['username']); // Yes that cookie ['username'] does contain the email
+    $fetchRank->execute();
+    while ($fr = $fetchRank->fetch(PDO::FETCH_ASSOC)) {
+      if (password_verify($_SESSION['password'], $fr['password'])) {
 
 
 $type = $_POST['type'];
@@ -188,10 +186,6 @@ if ($upload_check == 0) {
 if ($upload_check == 1) {
     $file_name = IMAGE_DIR . "/" . basename( $_FILES["img"]["name"]);
     $name =  $_POST['name'];
-    $desc = $_POST['desc'];
-    $link = $_POST['link'];
-
-    $series = $_POST['series'];
 
     $insert_values = $conn->prepare("INSERT INTO `show` (title, description, series, thumb_url, file_link) VALUES (:name, :description, :series, :thumb, :link)");
     $insert_values->bindParam(":name", $name);
@@ -205,7 +199,62 @@ if ($upload_check == 1) {
 
 }
 
-} }
+/*
+
+DELETE (dont delete - thats just the title)
+
+*/
+
+if ($type == "del_category") {
+
+    $name =  $_POST['name'];
+
+    $del = $conn->prepare("DELETE FROM `category` WHERE `name`=:name");
+    $del->bindParam(":name", $name);
+    $del->execute();
+    echo("Deleted the category " . $name);
+
+}
+
+if ($type == "del_series") {
+
+    $name =  $_POST['name'];
+
+    $del = $conn->prepare("DELETE FROM `series` WHERE `name`=:name");
+    $del->bindParam(":name", $name);
+    $del->execute();
+    echo("Deleted the category " . $name);
+
+}
+
+if ($type == "del_show") {
+
+    $name =  $_POST['name'];
+
+    $del = $conn->prepare("DELETE FROM `show` WHERE `title`=:name");
+    $del->bindParam(":name", $name);
+    $del->execute();
+    echo("Deleted the category " . $name);
+
+
+}
+
+if ($type == "del_user") {
+
+    $name =  $_POST['name'];
+
+    $del = $conn->prepare("DELETE FROM `user` WHERE `username`=:username");
+    $del->bindParam(":name", $name);
+    $del->execute();
+    echo("Deleted the category " . $name);
+
+
+}
+
+
+
+
+} } }
 
 
 ?>

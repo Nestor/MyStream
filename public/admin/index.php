@@ -1,12 +1,11 @@
 <?php session_start(); require("../../core/init.php");
-	if (isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1) {
-		$fetchRank = $conn->prepare("SELECT * FROM `user` WHERE `email`=:email");
-		$fetchRank->bindParam(":email", $_COOKIE['username']); // Yes that cookie ['username'] does contain the email
-		$fetchRank->execute();
-		while ($fr = $fetchRank->fetch(PDO::FETCH_ASSOC)) {
-			if (password_verify($_COOKIE['password'], $fr['password'])) {
-				echo "SUCCESS!";
-			}
+  if (isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1) {
+    $fetchRank = $conn->prepare("SELECT * FROM `user` WHERE `email`=:email");
+    $fetchRank->bindParam(":email", $_COOKIE['username']); // Yes that cookie ['username'] does contain the email
+    $fetchRank->execute();
+    while ($fr = $fetchRank->fetch(PDO::FETCH_ASSOC)) {
+      if (password_verify($_SESSION['password'], $fr['password'])) {
+
 
  ?>
 <html>
@@ -55,9 +54,42 @@
 </div>
 </a>
 
+<a href="delete.php">
 <div class="header">
 	<div class="inner-header">
-		<h1>View Users</h1>
+		<h1>Delete</h1>
+	</div>
+</div>
+</a>
+
+<br><br><br>
+
+<div class="f-header">
+	<div class="inner-header">
+		<h1>Invitation Key: 
+		<?php 
+			$fetchKey = $conn->prepare("SELECT * FROM `user` WHERE email=:email");
+			$fetchKey->bindParam(":email", $_COOKIE['username']); // Yes that cookie is the email despite the name username
+			$fetchKey->execute();
+			while ($fk = $fetchKey->fetch(PDO::FETCH_ASSOC)) {
+				echo $fk['emailauthverify'] . "<br>";
+				if ($fk['rank'] == 1) {
+					?>
+					<h2><a href="register.php" style="color:white;">Register (You need the invitation key)</a></h2><br>
+					<h2>You have already registered, if you want pass your invitation key over to a trusted friend if you want them to help out with this site.<br>
+					You have unlimited keys!</h2>
+					<?php
+				} else {
+					?>
+					<h2><a href="register.php" style="color:white;">Register (You need the invitation key)</a></h2><br>
+					<h2>You have already registered, if you want pass your invitation key over to a trusted friend if you want them to help out with this site. <br>You only have 1 key, so use it wisely!</h2>
+					<?php
+				}
+			}
+		?>
+		</h1>
+		<br><br>
+
 	</div>
 </div>
 
@@ -66,4 +98,4 @@
 </body>
 </html>
 
-<?php } } ?>
+<?php } } } ?>

@@ -22,7 +22,7 @@
 <div class="centered"> 
 
   <h1>Login</h1> 
-<form action="../../libraries/modules/auth/lauth.php" method="post"> 
+<form action="../libraries/modules/auth/lauth.php" method="post"> 
 <div class="admin_input"> 
   <input type="big_input" name="email" placeholder="Email">
   <input type="password" name="password" placeholder="Password">

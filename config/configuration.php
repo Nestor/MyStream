@@ -1,35 +1,9 @@
 <?php
 /* 
-*****************************************************************************************
-Version 2.2b
-
-	                  ____   _______   ____   _______  ____         _______
-	|    /\    /\    |    | |	    | |    |     |    |    | |\   |    |
-	|   /  \  /  \   |____| |		| |____|     |    |____| | \  |    |
-	|  /    \/    \  |	    |	    | |   \      |    |    | |  \ |    |
-	| /            \ |      |_______| |    \     |    |    | |   \|    |   (Wow it took a while making this "Important" sign)
-
-										|
-										|
-										|
-									   \ /
-                                        .
-							THIS SCRIPT IS STILL IN BETA
-
- 	I've spent so much time working on this, please if you notice anything DO NOT hesitate
- 	to report it. If you want more features, just request them, this script is going to be
- 	fully supported by me. (as of 24th Oct 16 - 00:48)	
-	
-	Do not hesitate to edit this file, I made it to be edited!
-	I'd love if you used this/parts of this in your work, but please give me the appropriate
-	credit, as it'd break my heart if you didn't.
-	I could've gone to sleep but I've been determained on getting this finished!
- 	Thank you for downloading this, enjoy! :)	
-	My shoulder is killing me, so yeah, I am not going to write any more now...
+I've designed the script to be heavily modifyable through this configuration file.
 
 
-
-*****************************************************************************************
+As of the 15th Oct 2016, everything in this configuration is editable!
 */
 
 /* The name you want to call your video streaming site */
@@ -52,7 +26,7 @@ $dbname = "mystream";
 $devmode = 1;
 
 /* The folder that this is stored in, if its in the main directory where you land when you goto your domain, then just set this to your domain name! */
-$website_root_user = "localhost:1111/MyStream"; // Dont leave / at the end
+$website_root_user = "http://localhost:1111/Stream"; // Dont leave / at the end
 
 /* The directory for where images are stored, just leave this how it is, unless you want to change it (there is no reason to to be honest), the default directory where images are stored is public/images/ if you want to store it in a folder before public you need to write ../imagepath
 Also dont add a / to the end */
@@ -61,6 +35,36 @@ $image_dir = "images";
 /* This is just to avoid spam bots, as registration should be private as its for people awaiting a rank */
 /* Give this to anyone who you want to register - its to access the register page */
 $registration_password = "12345";
+
+/* 
+*****************************************************************************************
+
+	                  ____   _______   ____   _______  ____         _______
+	|    /\    /\    |    | |	    | |    |     |    |    | |\   |    |
+	|   /  \  /  \   |____| |		| |____|     |    |____| | \  |    |
+	|  /    \/    \  |	    |	    | |   \      |    |    | |  \ |    |
+	| /            \ |      |_______| |    \     |    |    | |   \|    |   (Wow it took a while making this "Important" sign)
+
+										|
+										|
+										|
+									   \ /
+                                        .
+ 										
+Underneath are a few configuration values for a feature that is coming soon!
+Even if they say they are editable, they do NOTHING!
+Touching these wont do anything until the feature is implemented.
+If you haven't guessed its a login system. 
+By the way, the files for this have already been implemented, and the tables will automatically be setup in the main setup so you don't have any hassle when it comes to installing the new update with the login system in.
+If you want to review it in any way, just goto
+-> libraries/modules/auth/lauth.php or rauth.php (lauth = login auth | rauth = register auth)
+and
+-> public/verification/verify.php (this is the file that you goto when verifying your email address)
+
+All thats missing is the HTML files to allow people to make proper use of it, the reason they haven't been included is because they are pointless without the V2.1 Update which isn't ready yet!
+
+*****************************************************************************************
+*/
 
 /* User timeout in minutes */
 $user_timeout = 30; 

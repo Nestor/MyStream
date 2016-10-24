@@ -4,9 +4,8 @@
     $fetchRank->bindParam(":email", $_COOKIE['username']); // Yes that cookie ['username'] does contain the email
     $fetchRank->execute();
     while ($fr = $fetchRank->fetch(PDO::FETCH_ASSOC)) {
-      if (password_verify($_COOKIE['password'], $fr['password'])) {
-        echo "SUCCESS!";
-      }
+      if (password_verify($_SESSION['password'], $fr['password'])) {
+
 
  ?>
 <html>
@@ -61,4 +60,4 @@
 </body>
 </html>
 
-<?php } } ?>
+<?php } } } ?>

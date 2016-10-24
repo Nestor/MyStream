@@ -34,7 +34,7 @@
 ?>
   
   <h1>Register</h1> 
-<form action="../../libraries/modules/auth/rauth.php" method="post"> 
+<form action="../libraries/modules/auth/rauth.php" method="post"> 
 <div class="admin_input"> 
   <input type="big_input" name="username" placeholder="Username">
   <input type="big_input" name="email" placeholder="Email">

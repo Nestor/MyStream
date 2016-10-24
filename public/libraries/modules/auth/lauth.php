@@ -6,6 +6,7 @@
 	/* Default variables for your email and password */
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$plaintext_store = $_POST['password'];
 	$int = USER_LOGOUT_TIME;
 	$_SESSION['int'] = $int;
 	$hash_cost = PASS_HASH_COST;
@@ -23,11 +24,14 @@
 		/* Verify password hashes */
 		if (password_verify($password, $vep['password'])) {
 			$_SESSION['username'] = $vep['email'];
-			$_SESSION['password'] = $vep['password'];
+			$_SESSION['password'] = $plaintext_store;
 			$_SESSION['logged_in'] = 1;			
-			?>
-			 <meta http-equiv="refresh" content="0;URL='set.php'" />
-			<?php
+
+			$redirect = WEBSITE_DOMAIN . "/libraries/modules/auth/set.php";
+			echo "Loading...";
+
+ 			echo '<script>window.location.href = "' . $redirect . '";</script>';   
+
 		} else {
 			/* FailMsg */
     		echo 'Invalid Email or Password';
