@@ -22,4 +22,4 @@ Also if you need any help, just ask me!
 	   $dbname = "mystream";<br><br>
  3) Edit the configuration file and put in the rest of the required values.
  
-# <h5><i>Version 2.2b</i></h5>
+# <h5><i>Made with <3 by Exus | Version 2.2b</i></h5>
