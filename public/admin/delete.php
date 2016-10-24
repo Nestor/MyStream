@@ -14,9 +14,9 @@
 <body>
 
 <div class="header">
-  <div class="inner-header">
-    <h1><?php echo WEBSITE_NAME; if (DISPpage == 1) { echo " | Delete"; } ?></h1>
-  </div>
+	<div class="inner-header">
+		<h1><?php echo WEBSITE_NAME; if (DISPpage == 1) { echo " | Delete"; } ?></h1>
+	</div>
 </div>
 <div class="menu">
 <a href="../index.php">Home</a>

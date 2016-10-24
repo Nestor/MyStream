@@ -58,7 +58,7 @@ if ($upload_check == 0) {
 
 // Without this, then if the upload fails then the script will continue, this prevents it from continuing if there is a faliure, so there is not database overlap.
 if ($upload_check == 1) {
-    $file_name = IMAGE_DIR . "/" . basename( $_FILES["img"]["name"]);
+	$file_name = IMAGE_DIR . "/" . basename( $_FILES["img"]["name"]);
     $name =  $_POST['name'];
 
     $insert_values = $conn->prepare("INSERT INTO `category` (name, thumb) VALUES (:name, :thumb)");
@@ -239,17 +239,6 @@ if ($type == "del_show") {
 
 }
 
-if ($type == "del_user") {
-
-    $name =  $_POST['name'];
-
-    $del = $conn->prepare("DELETE FROM `user` WHERE `username`=:username");
-    $del->bindParam(":username", $name);
-    $del->execute();
-    echo("Deleted the user " . $name);
-
-
-}
 
 
 
