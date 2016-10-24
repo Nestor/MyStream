@@ -74,6 +74,7 @@ This is editable, but I wouldn't recommend it.
 Defining of the resource cost of LOW, MID or HIGH for use underneath 
 - The higher, the more resources it uses
 	- The more resources it uses, the longer the user will have to wait for it to load:
+- I RECOMMEND YOU LEAVE IT ON LOW!
 */
 define(LOW, 10);
 define(MID, 15);
@@ -84,5 +85,5 @@ define(HIGH, 20);
 	Resource Load for Password Hashing | LOW = Not as secure but fast | MID = Adds a bit of extra time | HIGH = Adds a lot of extra time
    the time it takes is variable on the server you have - powerful server = less time - slow server = more time.
  */
-$hash_cost = MID;
+$hash_cost = LOW;
 ?>
