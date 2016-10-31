@@ -1,6 +1,26 @@
 # <h1>MyStream</h1>
 An open source streaming backend (along with its own theme), for you to host your own streaming website, or even your own portfolio website to show off your videos!
 
+
+<h1>LINK TO PAGE: https://exusvx.github.io/MyStream/<h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2>Important!</h2>
  | THIS SCRIPT IS STILL IN BETA! |
 
