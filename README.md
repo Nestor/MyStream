@@ -1,5 +1,5 @@
 # 
-<h1>LINK TO PAGE: https://exusvx.github.io/MyStream/<h1>
+
 <h1>MyStream</h1>
 An open source streaming backend (along with its own theme), for you to host your own streaming website, or even your own portfolio website to show off your videos!
 
@@ -46,4 +46,4 @@ Also if you need any help, just ask me!
     -> define(ROOT, $_SERVER["DOCUMENT_ROOT"] . "/Stream"); // Edit the /stream part, if you place the file in no folder, then get rid of /stream, if you placed it in a folder then do /foldername DO NOT LEAVE A / AT THE END!
     -> Only edit the part /Stream !!!!
  
-# <h5><i>Made with <3 by Exus | Version 2.3</i></h5>
+# <h5><i>Version 2.3</i></h5>
